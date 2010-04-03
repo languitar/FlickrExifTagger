@@ -66,6 +66,8 @@ if __FILE__ == $0
               tagsToAdd = "lens:maker=Sigma,lens:aperture=2.8,lens:focallength=70-200,\"lens:type=70-200mm F2.8 EX DG Makro HSM II\""
             elsif tag.raw.include?("35mm F3.5 Macro")
               tagsToAdd = "lens:maker=Olympus,lens:aperture=3.5,lens:focallength=35,\"lens:type=Zuiko Digital 35mm F3.5 Macro\""
+            elsif tag.raw.include?("Sigma 10-20mm")
+              tagsToAdd = "lens:maker=Sigma,lens:aperture=4.0-5.6,lens:focallength=10-20,\"lens:type=10-20mm F4-5.6 EX DC HSM\""
             elsif tag.raw.include?("None")
               tagsToAdd = "lens:maker=Lensbaby,lens:focallength=50,\"lens:type=Lensbaby Muse Double Glass Optic\""
             end
