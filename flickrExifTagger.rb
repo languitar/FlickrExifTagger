@@ -1,3 +1,23 @@
+=begin
+A hacky script to tag photos on flickr with lens machine tags based on
+information found in the image exif data.
+
+To be useful for you own set of lenses and camera you need to change the
+lines defining the tags to add based on the exif information found in the
+images (see comment below).
+
+This program is free software; you can redistribute it
+and/or modify it under the terms of the GNU General
+Public License as published by the Free Software Foundation;
+either version 2, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+@author: Johannes Wienke <languitar at semipol dot de>
+=end
 
 require "flickraw"
 require "optparse"
@@ -58,6 +78,9 @@ if __FILE__ == $0
             puts("\tLens is: #{tag.raw}")
             
             tagsToAdd = nil
+            
+            # CHANGE THESE LINES FOR YOUR LENSES
+            
             if tag.raw.include?("14-42mm")
               tagsToAdd = "lens:maker=Olympus,lens:aperture=3.5-5.6,lens:focallength=14-42,\"lens:type=Zuiko Digital ED 14-42mm F3.5-5.6\""
             elsif tag.raw.include?("40-150mm")
