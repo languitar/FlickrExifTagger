@@ -19,18 +19,19 @@ GNU General Public License for more details.
 @author: Johannes Wienke <languitar at semipol dot de>
 =end
 
-require "flickraw"
-require "optparse"
-
 API_KEY = "25de6f1217a9f614e8782481d0e6ea99"
 SHARED_SECRET = "4401b29a4e0ca1df"
+
+FlickRawOptions = {
+	"api_key" => API_KEY,
+	"shared_secret" => SHARED_SECRET
+}
+require "flickraw"
+require "optparse"
 
 $login = nil
 
 def doLogin
-  
-  FlickRaw.api_key = API_KEY
-  FlickRaw.shared_secret = SHARED_SECRET
   
   # login the manual way without an old frob
   
