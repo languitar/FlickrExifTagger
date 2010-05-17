@@ -38,7 +38,7 @@ def doLogin
   frob = flickr.auth.getFrob()
   authUrl = FlickRaw.auth_url :frob => frob, :perms => 'write'
   
-  puts("Open this url in your process to complete the authication process : #{authUrl}")
+  puts("Open this url in your process to complete the authentication process : #{authUrl}")
   puts("Press Enter when you are finished.")
   STDIN.getc
 
