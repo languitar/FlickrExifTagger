@@ -27,6 +27,7 @@ OLD_LOGIN_FILE = File.expand_path("~/.flickrexiftagger_login")
 require "flickraw"
 require "optparse"
 require "yaml"
+require "pp"
 
 FlickRaw.api_key = API_KEY
 FlickRaw.shared_secret = SHARED_SECRET
@@ -169,7 +170,7 @@ if __FILE__ == $0
         flickr.photos.addTags :photo_id => photo.id, :tags => tagsToAdd
       else
         puts "  Unknown lens"
-        puts mappedTags
+        pp(Hash[mappedTags.sort()])
       end
 
     end
