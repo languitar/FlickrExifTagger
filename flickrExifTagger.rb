@@ -85,7 +85,7 @@ Rule = Struct.new(:matchers, :tags)
 
 $rules = [
     # Nikon camera
-    Rule.new([Matcher.new('exif.Make', /Nikon/i), Matcher.new('exif.Lens', /60\.0 ?mm fi\/2\.8/)],
+    Rule.new([Matcher.new('exif.Make', /Nikon/i), Matcher.new('exif.Lens', /60\.0 ?mm f\/2\.8/)],
              'lens:maker=Nikon,lens:aperture=2.8,lens:focallength=60,"lens:type=AF-S Micro Nikkor 60mm/2.8G ED"'),
     Rule.new([Matcher.new('exif.Make', /Nikon/i), Matcher.new('exif.Lens', /10\.0-20\.0 ?mm f\/4\.0-5\.6/)],
              'lens:maker=Sigma,lens:aperture=4.0-5.6,lens:focallength=10-20,"lens:type=10-20mm F4-5.6 EX DC HSM"'),
