@@ -1,0 +1,13 @@
+# This is a just a tiny script...
+Style/GlobalVars:
+  Enabled: false
+
+# allow parens for methods without parameters for better visual disambiguation of variables and methods
+Style/MethodCallParentheses:
+  Enabled: false
+
+# Very restrictive
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
