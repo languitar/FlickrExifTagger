@@ -104,112 +104,112 @@ $rules = [
   # Nikon camera
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /60\.0 ?mm f\/2\.8/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=2.8,' \
-           'lens:focallength=60,' \
-           '"lens:type=AF-S Micro Nikkor 60mm/2.8G ED"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '2.8',
+           'lens:focallength' => '60',
+           'lens:type' => 'AF-S micro Nikkor 60mm/2.8G ED'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /10\.0-20\.0 ?mm f\/4\.0-5\.6/)],
-           'lens:maker=Sigma,' \
-           'lens:aperture=4.0-5.6,' \
-           'lens:focallength=10-20,' \
-           '"lens:type=10-20mm F4-5.6 EX DC HSM"'),
+           'lens:maker' => 'Sigma',
+           'lens:aperture' => '4.0-5.6',
+           'lens:focallength' => '10-20',
+           'lens:type' => '10-20mm f4-5.6 EX DC HSM'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /90\.0 ?mm f\/2\.8/)],
-           'lens:maker=Tamron,' \
-           'lens:aperture=2.8,' \
-           'lens:focallength=90,' \
-           '"lens:type=SP AF 90mm F/2.8 Di MACRO 1:1"'),
+           'lens:maker' => 'Tamron',
+           'lens:aperture' => '2.8',
+           'lens:focallength' => '90',
+           'lens:type' => 'SP AF 90mm f/2.8 Di MACRO 1:1'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /16(\.0)?-85(\.0)? ?mm f\/3\.5-5\.6/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=3.5-5.6,' \
-           'lens:focallength=16-85,' \
-           '"lens:type=AF-S DX Nikkor 16-85mm 1:3.5-5.6G ED VR"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '3.5-5.6',
+           'lens:focallength' => '16-85',
+           'lens:type' => 'AF-S DX Nikkor 16-85mm 1:3.5-5.6G ED VR'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /70\.0-300\.0 ?mm f\/4\.0-5\.6/)],
-           'lens:maker=Tamron,' \
-           'lens:aperture=4.0-5.6,' \
-           'lens:focallength=70-300,' \
-           '"lens:type=SP AF 70-300 F/4-5.6 Di VC USD"'),
+           'lens:maker' => 'Tamron',
+           'lens:aperture' => '4.0-5.6',
+           'lens:focallength' => '70-300',
+           'lens:type' => 'SP AF 70-300 F/4-5.6 Di VC USD'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /35(\.0)? ?mm f\/1\.8/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=1.8,' \
-           'lens:focallength=35,' \
-           '"lens:type=AF-S DX Nikkor 35mm 1:1.8G"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '1.8',
+           'lens:focallength' => '35',
+           'lens:type' => 'AF-S DX Nikkor 35mm 1:1.8G'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /85(\.0)? ?mm f\/1.8/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=1.8,' \
-           'lens:focallength=85,' \
-           '"lens:type=AF Nikkor 85mm 1:1.8D"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '1.8',
+           'lens:focallength' => '85',
+           'lens:type' => 'AF Nikkor 85mm 1:1.8D'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /50\.0 ?mm f\/1\.8/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=1.8,' \
-           'lens:focallength=50,' \
-           '"lens:type=AF Nikkor 50mm 1:1.8D"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '1.8',
+           'lens:focallength' => '50',
+           'lens:type' => 'AF Nikkor 50mm 1:1.8D'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /55(\.0)?-200(\.0)? ?mm f\/4-5.6/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=4.0-5.6,' \
-           'lens:focallength=55-200,' \
-           '"lens:type=AF-S DX Zoom-Nikkor 55-200mm 1:4-5.6 G IF-ED VR"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '4.0-5.6',
+           'lens:focallength' => '55-200',
+           'lens:type' => 'AF-S DX Zoom-Nikkor 55-200mm 1:4-5.6 G IF-ED VR'),
   Rule.new([Matcher.new('exif.Make', /Nikon/i),
             Matcher.new('exif.Lens', /18\.0-35\.0 mm f\/3\.5-4\.5/)],
-           'lens:maker=Nikon,' \
-           'lens:aperture=3.5-4.5,' \
-           'lens:focallength=18-35,' \
-           '"lens:type=AF-S Nikkor 18-35mm f/3.5-4.5G ED"'),
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '3.5-4.5',
+           'lens:focallength' => '18-35',
+           'lens:type' => 'AF-S Nikkor 18-35mm f/3.5-4.5G ED'),
   # Olympus
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /14-42mm/)],
-           'lens:maker=Olympus,' \
-           'lens:aperture=3.5-5.6,' \
-           'lens:focallength=14-42,' \
-           '"lens:type=Zuiko Digital ED 14-42mm F3.5-5.6"'),
+           'lens:maker' => 'Olympus',
+           'lens:aperture' => '3.5-5.6',
+           'lens:focallength' => '14-42',
+           'lens:type' => 'Zuiko Digital ED 14-42mm F3.5-5.6'),
   Rule.new([Matcher.new('exif.Lens', /Olympus/i),
             Matcher.new('exif.Lens', /14-42mm/)],
-           'lens:maker=Olympus,' \
-           'lens:aperture=3.5-5.6,' \
-           'lens:focallength=14-42,' \
-           '"lens:type=Zuiko Digital ED 14-42mm F3.5-5.6"'),
+           'lens:maker' => 'Olympus',
+           'lens:aperture' => '3.5-5.6',
+           'lens:focallength' => '14-42',
+           'lens:type' => 'Zuiko Digital ED 14-42mm F3.5-5.6'),
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /40-150mm/)],
-           'lens:maker=Olympus,' \
-           'lens:aperture=4.0-5.6,' \
-           'lens:focallength=40-150,' \
-           '"lens:type=Zuiko Digital ED 40-150mm F4.0-5.6"'),
+           'lens:maker' => 'Olympus',
+           'lens:aperture' => '4.0-5.6',
+           'lens:focallength' => '40-150',
+           'lens:type' => 'Zuiko Digital ED 40-150mm F4.0-5.6'),
   Rule.new([Matcher.new('exif.Lens', /Olympus/i),
             Matcher.new('exif.Lens', /40-150mm/)],
-           'lens:maker=Olympus,' \
-           'lens:aperture=4.0-5.6,' \
-           'lens:focallength=40-150,' \
-           '"lens:type=Zuiko Digital ED 40-150mm F4.0-5.6"'),
+           'lens:maker' => 'Olympus',
+           'lens:aperture' => '4.0-5.6',
+           'lens:focallength' => '40-150',
+           'lens:type' => 'Zuiko Digital ED 40-150mm F4.0-5.6'),
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /1 22/)],
-           'lens:maker=Sigma,' \
-           'lens:aperture=2.8,' \
-           'lens:focallength=70-200,' \
-           '"lens:type=70-200mm F2.8 EX DG Makro HSM II"'),
+           'lens:maker' => 'Sigma',
+           'lens:aperture' => '2.8',
+           'lens:focallength' => '70-200',
+           'lens:type' => '70-200mm F2.8 EX DG Makro HSM II'),
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /35mm F3\.5 Macro/)],
-           'lens:maker=Olympus,' \
-           'lens:aperture=3.5,' \
-           'lens:focallength=35,' \
-           '"lens:type=Zuiko Digital 35mm F3.5 Macro"'),
+           'lens:maker' => 'Olympus',
+           'lens:aperture' => '3.5',
+           'lens:focallength' => '35',
+           'lens:type' => 'Zuiko Digital 35mm F3.5 Macro'),
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /Sigma 10-20mm/)],
-           'lens:maker=Sigma,' \
-           'lens:aperture=4.0-5.6,' \
-           'lens:focallength=10-20,' \
-           '"lens:type=10-20mm F4-5.6 EX DC HSM"'),
+           'lens:maker' => 'Sigma',
+           'lens:aperture' => '4.0-5.6',
+           'lens:focallength' => '10-20',
+           'lens:type' => '10-20mm F4-5.6 EX DC HSM'),
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /None/)],
-           'lens:maker=Lensbaby,' \
-           'lens:focallength=50,' \
-           '"lens:type=Lensbaby Muse Double Glass Optic"'),
+           'lens:maker' => 'Lensbaby',
+           'lens:focallength' => '50',
+           'lens:type' => 'Lensbaby Muse Double Glass Optic'),
   # Ignore Nexus 5
   Rule.new([Matcher.new('exif.Make', /LGE/i),
             Matcher.new('exif.Model', /Nexus 5/)],
@@ -268,6 +268,9 @@ if __FILE__ == $PROGRAM_NAME
       begin
         rule = match_rule($rules, mapped_tags)
         tags_to_add = rule.tags
+        tags_to_add = tags_to_add.map{|k,v| "\"#{k}=#{v}\""}.join(',') \
+          if tags_to_add
+        puts "  #{tags_to_add}"
         flickr.photos.addTags photo_id: photo.id, tags: tags_to_add \
           if tags_to_add
       rescue RuntimeError
