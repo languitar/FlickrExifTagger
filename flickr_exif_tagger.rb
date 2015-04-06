@@ -24,6 +24,7 @@ OLD_LOGIN_FILE = File.expand_path('~/.flickrexiftagger_login')
 
 require 'flickraw'
 require 'optparse'
+require 'ostruct'
 require 'yaml'
 require 'pp'
 
@@ -76,6 +77,24 @@ def do_login
     puts "Authentication failed : #{e.msg}"
     exit(1)
   end
+end
+
+def parse_arguments(args)
+  # provide defaults
+  options = OpenStruct.new
+  options.ignore_missing = false
+
+  opt_parser = OptionParser.new do |opts|
+    opts.on('-i', '--[no-]ignore-missing',
+            'Ignore errors from missing rules and only print them during ' \
+            'printing. Defaults to raising an error in case of ' \
+            'a missing rule.') do |ignore|
+      options.ignore_missing = ignore
+    end
+  end
+
+  opt_parser.parse!(args)
+  options
 end
 
 Matcher = Struct.new(:key, :regex)
@@ -190,10 +209,39 @@ $rules = [
             Matcher.new('exif.LensType', /None/)],
            'lens:maker=Lensbaby,' \
            'lens:focallength=50,' \
-           '"lens:type=Lensbaby Muse Double Glass Optic"')
+           '"lens:type=Lensbaby Muse Double Glass Optic"'),
+  # Ignore Nexus 5
+  Rule.new([Matcher.new('exif.Make', /LGE/i),
+            Matcher.new('exif.Model', /Nexus 5/)],
+           nil)
 ]
 
+def handle_missing(mapped_tags, ignore_missing)
+  debug_string = Hash[mapped_tags.sort()].pretty_inspect
+  if ignore_missing
+    puts '  Unknown lens'
+    puts debug_string
+  else
+    fail "Unknown lens:\n#{debug_string}"
+  end
+end
+
+def match_rule(rules, mapped_tags)
+  rules.each do |rule|
+    # find out whether this rules matches
+    matches = true
+    rule.matchers.each do |matcher|
+      matches &= matcher.regex.match(mapped_tags[matcher.key])
+    end
+
+    # if we have a matching rule, use the first one and ignore all others
+    return rule if matches
+  end
+  fail 'No matching rule found'
+end
+
 if __FILE__ == $PROGRAM_NAME
+  options = parse_arguments(ARGV)
 
   do_login()
 
@@ -211,33 +259,19 @@ if __FILE__ == $PROGRAM_NAME
 
       exif = flickr.photos.getExif photo_id: photo.id, secret: photo.secret
 
-      # create a has for all tags
+      # create a hash for all tags
       mapped_tags = {}
       exif.exif.each do |tag|
         mapped_tags["exif.#{tag.tag}"] = tag.raw
       end
 
-      # compare tags to all known rules
-      tags_to_add = nil
-      $rules.each do |rule|
-        # find out whether this rules matches
-        matches = true
-        rule.matchers.each do |matcher|
-          matches &= matcher.regex.match mapped_tags[matcher.key]
-        end
-
-        # if we have a matching rule, use the first one and ignore all others
-        if matches
-          tags_to_add = rule.tags
-          break
-        end
-      end
-
-      if tags_to_add
-        flickr.photos.addTags photo_id: photo.id, tags: tags_to_add
-      else
-        puts '  Unknown lens'
-        pp(Hash[mapped_tags.sort()])
+      begin
+        rule = match_rule($rules, mapped_tags)
+        tags_to_add = rule.tags
+        flickr.photos.addTags photo_id: photo.id, tags: tags_to_add \
+          if tags_to_add
+      rescue RuntimeError
+        handle_missing(mapped_tags, options.ignore_missing)
       end
     end
 
