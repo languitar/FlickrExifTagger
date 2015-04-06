@@ -104,6 +104,8 @@ $rules = [
              'lens:maker=Nikon,lens:aperture=1.8,lens:focallength=50,"lens:type=AF Nikkor 50mm 1:1.8D"'),
     Rule.new([Matcher.new('exif.Make', /Nikon/i), Matcher.new('exif.Lens', /55(\.0)?-200(\.0)? ?mm f\/4-5.6/)],
              'lens:maker=Nikon,lens:aperture=4.0-5.6,lens:focallength=55-200,"lens:type=AF-S DX Zoom-Nikkor 55-200mm 1:4-5.6 G IF-ED VR"'),
+    Rule.new([Matcher.new('exif.Make', /Nikon/i), Matcher.new('exif.Lens', /18\.0-35\.0 mm f\/3\.5-4\.5/)],
+             'lens:maker=Nikon,lens:aperture=3.5-4.5,lens:focallength=18-35,"lens:type=AF-S Nikkor 18-35mm f/3.5-4.5G ED"'),
     # Olympus
     Rule.new([Matcher.new('exif.Make', /Olympus/i), Matcher.new('exif.LensType', /14-42mm/)],
              'lens:maker=Olympus,lens:aperture=3.5-5.6,lens:focallength=14-42,"lens:type=Zuiko Digital ED 14-42mm F3.5-5.6"'),
