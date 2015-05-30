@@ -162,6 +162,12 @@ $rules = [
            'lens:aperture' => '3.5-4.5',
            'lens:focallength' => '18-35',
            'lens:type' => 'AF-S Nikkor 18-35mm f/3.5-4.5G ED'),
+  Rule.new([Matcher.new('exif.Make', /Nikon/i),
+            Matcher.new('exif.Lens', /24\.0-120\.0 mm f\/4\.0/)],
+           'lens:maker' => 'Nikon',
+           'lens:aperture' => '4.0',
+           'lens:focallength' => '24-120',
+           'lens:type' => 'AF-S Nikkor 24-120mm f/4G ED VR'),
   # Olympus
   Rule.new([Matcher.new('exif.Make', /Olympus/i),
             Matcher.new('exif.LensType', /14-42mm/)],
