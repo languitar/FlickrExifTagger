@@ -219,6 +219,10 @@ $rules = [
   # Ignore Nexus 5
   Rule.new([Matcher.new('exif.Make', /LGE/i),
             Matcher.new('exif.Model', /Nexus 5/)],
+           nil),
+  # Ignore RX100
+  Rule.new([Matcher.new('exif.Make', /Sony/i),
+            Matcher.new('exif.Model', /DSC-RX100M2/)],
            nil)
 ]
 
